@@ -6,6 +6,10 @@ defmodule SimpleBudgetApp.Account.AccountInformation do
   end
 
   def check_balance(account) do
-    account.balance
+    balance = SimpleBudgetApp.Account.AccountInformation.check_balance(account)
+    case balance > 0 do
+      true -> "send"
+      false -> account.balance
+    end
   end
 end
