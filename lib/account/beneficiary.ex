@@ -7,6 +7,7 @@ defmodule SimpleBudgetApp.Account.Beneficiary do
 
   def transfer(beneficiary, amount, account) do
     balance = SimpleBudgetApp.Account.AccountInformation.check_balance(account)
+
     case balance > 0 do
       true -> send(amount)
       false -> "Cannot Send"
